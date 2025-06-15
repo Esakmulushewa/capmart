@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+
+    <div class="blur-container d-flex justify-content-center align-items-center">
+        <img src="{% static 'images/images.jpg' %}" class="blurred-img" alt="">
+        <div class="overlay-text container justify-content-center">
+            <h1 class="text-white fs-2"> Free Delivery & Quality Products </h1>
+            <div class="d-flex justify-content-center">
+                <p class="btn btn-outline-light me-4"> Place an order </p>
+                <p class="btn btn-outline-light"> Get in contact </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-3 d-flex justify-content-around">
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+    </div>
+
+    <h1 class="text-center"> Recent in store </h1>
+
+    <div class=" container my-4 px-2">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            {% for product in products %}
+            <div class="col">
+                <div class="product-card text-center">
+                    <a href="{% url 'details' product.id %}">
+                        <img src={{ product.image.url }} class="product-image" />
+                        <h6 class="product-name mt-2">{{product.prod_name}}</h6>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

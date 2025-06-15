@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <p> {{product.prod_name}} </p>
+<p> {{product.price}} </p>
+<p> {{product.description}} </p>
+<img src={{ product.image.url }} style="height: 100px" />
+<form method="POST">
+    {% csrf_token %}
+    <p> if you want to place an order for. </p>
+    <input name="ph_no" placeholder="............." required />
+    <input type="hidden" name="product_name" value={{ product.prod_name }}>
+    <input type="hidden" name="product_id" value={{ product.id }}>
+    <button class="btn btn-dark"> Place an order </button>
+</form> -->
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ product.image.url }}" alt="{{ product.prod_name }}"
+                class="img-fluid rounded shadow details-img" />
+        </div>
+        <div class=" col-md-6">
+            <h1 class="display-5">{{ product.prod_name }}</h1>
+            <p class="text-muted">{{ product.description }}</p>
+            <h3 class="text-success">${{ product.price }}</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <p> if you want to place an order, put your phone number below. </p>
+                <div class="d-flex align-items-center w-auto">
+                    <input name="ph_no" type="tel" class="form-control me-2" placeholder="123-4567-8901" required
+                        style="width: 50%;" />
+                    <input type="hidden" name="product_name" value={{ product.prod_name }}>
+                    <input type="hidden" name="product_id" value={{ product.id }}>
+                    <button class="btn btn-dark"> Place an order </button>
+                </div>
+            </form>
+            <div> <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">Back to Products</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

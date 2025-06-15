@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for result in results %}
+<div class="col">
+    <div class="product-card text-center">
+        <a href="{% url 'details' product.id %}">
+            <img src={{ result.image.url }} class="product-image" />
+            <h6 class="product-name mt-2">{{result.prod_name}}</h6>
+        </a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
