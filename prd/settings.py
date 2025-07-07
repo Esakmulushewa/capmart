@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,7 +118,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL= 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -133,3 +137,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'isaacneos17@gmail.com'
 EMAIL_HOST_PASSWORD = 'pkxr xrjf ztib ihyi'  
+TELEGRAM_BOT_TOKEN = "7594914991:AAEVVQyRkhdC-3sw5m10qVYO4aBAjVoUQj0"
+TELEGRAM_CHAT_ID = 1925341634

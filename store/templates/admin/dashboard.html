@@ -1,0 +1,33 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>📊 Store Overview</h1>
+
+<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+    <div style="background: #f0f0f0; padding: 1rem; border-radius: 10px;">
+        <h2>Total Products</h2>
+        <p><strong>{{ total_products }}</strong></p>
+    </div>
+    <div style="background: #f0f0f0; padding: 1rem; border-radius: 10px;">
+        <h2>Categories</h2>
+        <p><strong>{{ unique_categories }}</strong></p>
+    </div>
+</div>
+
+<h2 style="margin-top: 2rem;">Products by Category</h2>
+<table class="adminlist">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Product Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cat, count in category_counts.items %}
+        <tr>
+            <td>{{ cat }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
