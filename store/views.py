@@ -22,7 +22,7 @@ def home(request):
     categories = Product.objects.exclude(category="Laptop").values_list('category', flat=True).distinct()
     categorized_products ={}
     for category in categories: 
-        homeProducts = Product.objects.filter(category=category)[:10]
+        homeProducts = Product.objects.filter(category=category)[:8]
         categorized_products[category] = homeProducts
     laptops = Product.objects.filter(category="Laptop")
     return render(request, 'home.html', {"categorized": categorized_products, "laptops": laptops})

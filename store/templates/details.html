@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %} - Details {% endblock %}
 {% block content %}
 
 <div class="breadcrumb-area">
@@ -18,8 +18,8 @@
 <div class="container my-5">
     <div class="row">
         <div class="col-md-6">
-            <img src="{{ product.image.url }}" alt="{{ product.prod_name }}"
-                class="img-fluid rounded shadow details-img" style="width:100%; height: auto;" />
+            <img src="{{ product.image.url }}" alt="{{ product.prod_name }}" class="img-fluid rounded details-img"
+                style="width:400px; height: auto; margin: auto;" />
         </div>
         <div class=" col-md-6">
             <p class=" fw-3 fs-4 my-3 text-primary" style="font-size: 25px; padding-bottom: 20px;">
@@ -59,51 +59,22 @@
     </div>
 
 
-    <section class="product-area li-laptop-product Special-product pb-45" style="margin-top: 50px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="li-section-title">
-                        <h2><span>Similar Products</span></h2>
-                    </div>
-                    <div class="row">
-                        <div class="special-product-active owl-carousel owl-loaded owl-drag">
-                            {% for simi in similar %}
-                            <div class="col-lg-12">
-                                <div class="single-product-wrap">
-                                    <div class="product-image">
-                                        <a href="{% url 'details' simi.id %}">
-                                            <img src="{{ simi.image.url }}" alt="{{ simi.prod_name }}">
-                                        </a>
-                                    </div>
-                                    <div class="product_desc">
-                                        <div class="product_desc_info">
-                                            <div class="product-review">
-                                                <h5 class="manufacturer">
-                                                    <a href="shop-left-sidebar.html">{{ simi.categeory }}</a>
-                                                </h5>
+    <div class="li-section-title" style="margin-top: 40px; margin-bottom: 15px; margin-left: 40px;">
+        <h2><span>Similar Products</span></h2>
+    </div>
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        {% for simi in similar %}
+        <div class="rounded-lg m-auto" style="min-width: 130px; padding: 10px;">
+            <img src="{{ simi.image.url }}" alt="" style="width: 100%; height:auto;">
+            <div class="mt-4">
+                <p class="text-muted">{{simi.prod_name}}</p>
 
-                                            </div>
-                                            <h4><a class="product_name" href="single-product.html">
-                                                    {{ simi.prod_name }}</a></h4>
-                                            <div class="price-box">
-                                                <span class="new-price">{{ simi.price }}</sp bran>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+
+        {% endfor %}
+    </div>
+
+
 
     {% endblock %}
