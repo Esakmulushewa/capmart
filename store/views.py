@@ -3,6 +3,7 @@ from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
 import requests
 # Create your views here.
 # products = Product.objects.all()
@@ -52,7 +53,8 @@ def details(request, id):
         phoneNO = request.POST.get("ph_no")
         product_url = request.build_absolute_uri(f"/product/{product.id}")
         send_telegram_message(product, phoneNO, product_url)
-    
+        messages.success(request, "Your order has been sent. We will get back to you.")
+        return redirect("home")
     return render(request, 'details.html', {"product": product, "similar": similar_products})
 
 

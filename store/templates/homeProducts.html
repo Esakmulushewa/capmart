@@ -28,7 +28,7 @@
 <div class="li-section-title" style="margin-top: 40px; margin-bottom: 15px;  margin-left: 40px;">
     <h2><span>{{ category }}s</span></h2>
 </div>
-<div class="container d-flex flex-wrap justify-content-between align-items-center">
+<div class="container d-flex flex-wrap justify-content-between align-items-center" id="home-products">
     {% for product in products %}
     <div class="rounded-lg m-auto" style="width: 240px; padding: 10px; margin:auto;">
         <a href="{% url 'details' product.id %}">
