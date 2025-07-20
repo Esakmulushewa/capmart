@@ -73,3 +73,5 @@ def products(request):
         categorized_products[category] = products
     return render(request, "products.html", {"products": categorized_products })
 
+def about(request):
+    return render(request, "about.html")
