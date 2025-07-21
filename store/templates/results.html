@@ -14,7 +14,7 @@
                                 <a href="{% url 'details' search.id %}">
                                     <img src="{{ search.image.url }}" alt="{{ search.prod_name }}">
                                 </a>
-                                <span class="sticker">New</span>
+
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-7">
@@ -22,17 +22,9 @@
                                 <div class="product_desc_info">
                                     <div class="product-review">
                                         <h5 class="manufacturer">
-                                            <a href="product-details.html">{{ search.category }}</a>
+                                            {{ search.category }}
                                         </h5>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li><i class="fa fa-star-o"></i></li>
-                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                                <li class="no-star"><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
+
                                     </div>
                                     <h4><a class="product_name" href="{% url 'details' search.id %}">
                                             {{ search.prod_name }}</a></h4>
@@ -43,17 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="shop-add-action mb-xs-30">
-                                <ul class="add-actions-link">
-                                    <li class="add-cart"><a href="#">Select</a></li>
-                                    <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to
-                                            wishlist</a></li>
-                                    <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter"
-                                            href="#"><i class="fa fa-eye"></i>Quick view</a></li>
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                     {% endfor %}
                 </div>
