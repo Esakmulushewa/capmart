@@ -2,46 +2,20 @@
 {% block title %} - Searches {% endblock %}
 {% block content %}
 
-<div class="shop-products-wrapper container">
-    <div class="tab-content">
-        <div id="list-view" class="tab-pane product-list-view fade active show" role="tabpanel">
-            <div class="row">
-                <div class="col">
-                    {% for search in searches %}
-                    <div class="row product-layout-list">
-                        <div class="col-lg-3 col-md-5 ">
-                            <div class="product-image">
-                                <a href="{% url 'details' search.id %}">
-                                    <img src="{{ search.image.url }}" alt="{{ search.prod_name }}">
-                                </a>
 
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-7">
-                            <div class="product_desc">
-                                <div class="product_desc_info">
-                                    <div class="product-review">
-                                        <h5 class="manufacturer">
-                                            {{ search.category }}
-                                        </h5>
-
-                                    </div>
-                                    <h4><a class="product_name" href="{% url 'details' search.id %}">
-                                            {{ search.prod_name }}</a></h4>
-                                    <div class="price-box">
-                                        <span class="new-price">{{ search.price }} br.</span>
-                                    </div>
-                                    <p>{{ search.description }}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    {% endfor %}
-                </div>
+<div class="container d-flex flex-wrap justify-content-between align-items-center">
+    {% for search in searches %}
+    <div class="rounded-lg m-auto pr-card">
+        <a href="{% url 'details' search.id %}">
+            <img src="{{ search.image.url }}" alt="" style="width: 100%;">
+            <div class="mt-4">
+                <p class="text-muted" style="border-bottom: 1px solid #575353a2">{{search.category}}</p>
+                <p class="text-primary text-bold fs-6">{{ search.prod_name }}</p>
+                <p class="text-danger text-bold fw-medium mt-2">{{ search.price }} br.</p>
             </div>
-        </div>
+        </a>
     </div>
-</div>
 
+    {% endfor %}
+</div>
 {% endblock %}

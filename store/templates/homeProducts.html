@@ -3,12 +3,12 @@
 </div>
 <div class="container d-flex flex-wrap justify-content-between align-items-center">
     {% for laptop in laptops %}
-    <div class="rounded-lg m-auto" style="width: 240px; padding: 10px; margin:auto;">
+    <div class="rounded-lg m-auto pr-card">
         <a href="{% url 'details' laptop.id %}">
-            <img src="{{ laptop.image.url }}" alt="" style="width: 100%; height: 160px;">
+            <img src="{{ laptop.image.url }}" alt="" style="width: 100%;">
             <div class="mt-4">
-                <p class="text-muted">{{laptop.category}}</p>
-                <p class="text-primary text-bold fs-6 fw-semibold">{{ laptop.prod_name }}</p>
+                <p class="text-muted" style="border-bottom: 1px solid #575353a2">{{laptop.category}}</p>
+                <p class="text-primary text-bold fs-6">{{ laptop.prod_name }}</p>
                 <p class="text-danger text-bold fw-medium mt-2">{{ laptop.price }} br.</p>
             </div>
         </a>
@@ -30,13 +30,13 @@
 </div>
 <div class="container d-flex flex-wrap justify-content-between align-items-center" id="home-products">
     {% for product in products %}
-    <div class="rounded-lg m-auto" style="width: 240px; padding: 10px; margin:auto;">
+    <div class="rounded-lg m-auto pr-card">
         <a href="{% url 'details' product.id %}">
             <img src="{{ product.image.url }}" alt="" style="width: 100%;">
             <div class="mt-4">
                 <p class="text-muted">{{product.category}}</p>
-                <p class="text-primary text-bold fs-6 fw-semibold">{{ product.prod_name }}</p>
-                <p class="text-danger text-bold fw-medium mt-2">{{ product.price }} br.</p>
+                <p class="text-primary text-bold fs-6 ">{{ product.prod_name }}</p>
+                <p class="text-danger text-bold fw-medium">{{ product.price }} br.</p>
             </div>
         </a>
     </div>
