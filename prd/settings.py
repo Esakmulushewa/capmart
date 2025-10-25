@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-+(z54=9zcde++%88x!(j_tzb7h$4hpw4l9ju=d%%gna-ms8szj')# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['captainmart.et', 'www.captainmart.et']
+ALLOWED_HOSTS = ['captainmart.et', 'www.captainmart.et', 'captainmart.onrender.com']
 
 # Application definition
 
