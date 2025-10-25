@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-+(z54=9zcde++%88x!(j_tzb7h$4hpw4l9ju=d%%gna-ms8szj')# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['captainmart.et', 'www.captainmart.et', 'captainmart.onrender.com']
 
@@ -121,7 +121,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL= '/media/'
+MEDIA_URL= 'https://captainmart.et/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
