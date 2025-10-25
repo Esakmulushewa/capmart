@@ -30,10 +30,10 @@ def home(request):
 
 def send_telegram_message(product, phoneNO, product_url=None):
     text = (
-        f"New order! \n"
-        f"{phoneNO} \n"
+        f"NEW ORDER! \n"
+        f"Phone number: {phoneNO} \n"
         f"Product: {product.prod_name} \n"
-        f"price: {product.price}"
+        f"Price: {product.price} \n"
     )
     if product_url:
         text += f"Link: {product_url}"
