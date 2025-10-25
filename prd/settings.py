@@ -25,7 +25,7 @@ import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-+(z54=9zcde++%88x!(j_tzb7h$4hpw4l9ju=d%%gna-ms8szj')# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'captainmart.onrender.com']
+ALLOWED_HOSTS = ['captainmart.et', 'www.captainmart.et']
 
 # Application definition
 
@@ -115,8 +115,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+# Static files 
 
 STATIC_URL = '/static/'
 
@@ -133,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # sending an email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Use your email provider's SMTP server
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = ''
